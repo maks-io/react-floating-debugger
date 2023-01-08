@@ -11,6 +11,11 @@
     "build": "yarn clear-build-folder && yarn transpile && yarn fix-paths",
     "dev": "yarn nodemon"
   },
+  "keywords": [
+    "react",
+    "debugger",
+    "floating container"
+  ],
   "files": [
     "build"
   ],
