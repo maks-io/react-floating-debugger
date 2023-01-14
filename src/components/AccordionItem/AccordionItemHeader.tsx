@@ -10,6 +10,7 @@ export const AccordionItemHeader = ({
   const { iconSize } = useContext(SettingsContext);
   return (
     <div
+      onClick={() => setOpen(!isOpen)}
       style={{
         fontSize: 16,
         fontWeight: "bold",
