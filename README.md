@@ -1,5 +1,7 @@
 # react-floating-debugger
 
+[![Version](https://img.shields.io/npm/v/react-floating-debugger)](https://www.npmjs.com/package/react-floating-debugger)
+
 Lightweight floating container for react apps
 
 <img alt="react-floating-debugger-demo-gif" src="react-floating-debugger-gif-01.gif" />
