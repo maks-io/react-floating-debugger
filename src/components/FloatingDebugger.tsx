@@ -58,7 +58,7 @@ export const FloatingDebugger = (
   const { show, defaultSize, defaultPosition } = props;
 
   const [getInfoSettings, setInfoSettings] =
-    useLocalStorage<FloatingDebuggerSettings>("environment-info-shown", {
+    useLocalStorage<FloatingDebuggerSettings>("environment-info-settings", {
       size: defaultSize || "MINIMIZED",
       position: defaultPosition || "BOTTOM_LEFT",
     });
