@@ -15,22 +15,6 @@ interface FloatingDebuggerSettings {
   position: IInfoPosition;
   size: IInfoSize;
 }
-/*
-type SimpleReactNodeOrFunction =
-  | ReactNode
-  | ((size: IInfoSize) => ReactNode)
-  | ((size: IInfoSize) => FloatingDebuggerChild);
-
-interface AccordionItem {
-  title: string;
-  content: SimpleReactNodeOrFunction;
-  isDefaultOpen?: boolean;
-}
-
-export type FloatingDebuggerChild =
-  | SimpleReactNodeOrFunction
-  | AccordionItem
-  | AccordionItem[];*/
 
 export type AccordionItem = {
   title: string;
