@@ -16,8 +16,9 @@ export const ReadymadeChildren = (
     isSubComponent = false
   ) => {
     if (!child) {
+      const key = `invalid-child-at-index-${index}-case-a`;
       return (
-        <div key={`invalid-child-at-index-${index}-case-a`}>
+        <div id={key} key={key}>
           Invalid child to render at index {index} (case a)
         </div>
       );
@@ -25,20 +26,23 @@ export const ReadymadeChildren = (
       return child;
     } else if (typeof child === "object" && !Array.isArray(child)) {
       if (!isSubComponent && !child.title) {
+        const key = `child-${index}-without-title-prop`;
         return (
-          <div key={`child-${index}-without-title-prop`}>
+          <div id={key} key={key}>
             Cannot render object at index {index} without a title.
           </div>
         );
       } else if (!isSubComponent && !child.content) {
+        const key = `child-${index}-without-content-prop`;
         return (
-          <div key={`child-${index}-without-content-prop`}>
+          <div id={key} key={key}>
             Cannot render object at index {index} without a content.
           </div>
         );
       } else if (!isSubComponent) {
+        const key = `child-${index}`;
         return (
-          <div key={`child-${index}`}>
+          <div id={key} key={key}>
             <AccordionItem
               key={`accordeon-item-for-child-${index}`}
               uniqueKey={`accordeon-item-for-child-${index}`}
@@ -66,8 +70,9 @@ export const ReadymadeChildren = (
         renderOneChild(cr, `${index}.${childIndex}`, false)
       );
     } else {
+      const key = `invalid-child-at-index-${index}-case-b`;
       return (
-        <div key={`invalid-child-at-index-${index}-case-b`}>
+        <div id={key} key={key}>
           Invalid child to render at index {index} (case b)
         </div>
       );
@@ -77,5 +82,11 @@ export const ReadymadeChildren = (
   const childrenArray: FloatingDebuggerChild[] = Array.isArray(children)
     ? children
     : [children];
-  return childrenArray.map((child, index) => renderOneChild(child, index));
+  const ca = childrenArray.map((child, index) => renderOneChild(child, index));
+
+  if (ca.length === 1) {
+    return ca[0];
+  }
+
+  return ca;
 };

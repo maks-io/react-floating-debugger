@@ -39,6 +39,7 @@ export const MoveButton = ({
 
   return (
     <div
+      key={`move-button-${position}`}
       title={getIconTooltip(currentSize, isMinimizeButton)}
       onClick={(e) => {
         e.preventDefault();
