@@ -6,6 +6,8 @@ import { isArrowButtonHidden } from "./isArrowButtonHidden";
 import { getTargetPosition } from "./getTargetPosition";
 import { IArrowPosition } from "../IArrowPosition";
 import { Icon } from "./Icon";
+import { getMoveButtonPosition } from "$/components/DirectionalPad/MoveButton/getMoveButtonPosition";
+import { HoverContext } from "$/contexts/HoverContext";
 
 export const MoveButton = ({
   moveTo,
@@ -24,6 +26,14 @@ export const MoveButton = ({
 }): JSX.Element => {
   const { position: currentPosition, size: currentSize } =
     useContext(InfoSettingsContext);
+  const {
+    setMoveButtonHovered,
+    setLabelHovered,
+    setAreaHovered,
+    areaHovered,
+    moveButtonHovered,
+    labelHovered,
+  } = useContext(HoverContext);
 
   const [isHovered, setHovered] = useState(false);
 
@@ -31,11 +41,15 @@ export const MoveButton = ({
     setHovered(false);
   }, [currentSize]);
 
-  if (currentSize === "MINIMIZED") {
-    return null;
-  }
-
   const isMinimizeButton = currentPosition === position;
+
+  if (currentSize === "MINIMIZED") {
+    if (
+      isMinimizeButton ||
+      (!areaHovered && !moveButtonHovered && !labelHovered)
+    )
+      return null;
+  }
 
   return (
     <div
@@ -46,7 +60,8 @@ export const MoveButton = ({
         e.stopPropagation();
         if (currentSize === "MAXIMIZED") {
           unmaximize(position as IInfoPosition); // casting in that case is okay
-        } else if (currentSize === "IN_CORNER") {
+        } else {
+          // currentSize === "MINIMIZED" || currentSize === "IN_CORNER"
           if (currentPosition === position) {
             minimize();
           } else {
@@ -56,17 +71,28 @@ export const MoveButton = ({
             );
             moveTo(targetPosition);
           }
-        } else {
-          // do nothing (buttons don't exist for size MINIMIZED)
+        }
+        setMoveButtonHovered(false);
+        setAreaHovered(false);
+        setLabelHovered(false);
+        if (isHovered) {
+          setHovered(false);
         }
       }}
       onMouseEnter={() => {
         setHovered(true);
+        setMoveButtonHovered(true);
       }}
       onMouseLeave={() => {
         setHovered(false);
+        setMoveButtonHovered(false);
       }}
-      style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        cursor: "pointer",
+        ...getMoveButtonPosition(currentSize, position),
+      }}
     >
       <Icon
         currentSize={currentSize}

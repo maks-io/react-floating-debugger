@@ -4,9 +4,12 @@
 
 Lightweight floating container for react apps
 
-<img alt="react-floating-debugger-demo-gif" src="react-floating-debugger-gif-01.gif" />
+<img alt="react-floating-debugger-demo-gif" src="documentation/react-floating-debugger-gif-01.gif" />
 
 <span style="font-size: 12px; font-style: italic;">(Source for 'emoji search' example app can be found at https://github.com/ahfarmer/emoji-search)</span>
+
+## Live Demo
+https://stackblitz.com/edit/react-floating-debugger-demo
 
 ## Features
 
@@ -18,7 +21,6 @@ Lightweight floating container for react apps
 
 ## Technical highlights
 
-- no 3rd party dependencies, therefore extra lightweight
 - fully written in TypeScript
 - customizable
 

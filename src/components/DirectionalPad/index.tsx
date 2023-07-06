@@ -6,6 +6,7 @@ import { DirectionalPadContainer } from "./DirectionalPadContainer";
 import { MoveButton } from "./MoveButton";
 import { HorizontalPadButtonContainer } from "./HorizontalPadButtonContainer";
 import { ChildrenContainer } from "./ChildrenContainer";
+import { HoverArea } from "$/components/DirectionalPad/HoverArea";
 
 export const DirectionalPad = ({
   children,
@@ -36,6 +37,7 @@ export const DirectionalPad = ({
   };
   return (
     <DirectionalPadContainer>
+      <HoverArea />
       <HorizontalPadButtonContainer>
         <MoveButton {...propsForMoveButton} position="TOP_LEFT" degrees={225} />
         <MoveButton

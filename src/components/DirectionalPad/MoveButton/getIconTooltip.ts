@@ -7,7 +7,7 @@ export const getIconTooltip = (
   if (currentSize === "MAXIMIZED") {
     return "Click to downsize...";
   } else if (currentSize === "MINIMIZED") {
-    return "Click to enlarge...";
+    return isMinimizeButton ? "Click to enlarge..." : "Click to move...";
   } else {
     return isMinimizeButton ? "Click to minimize..." : "Click to move...";
   }
