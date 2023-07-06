@@ -12,9 +12,9 @@ export const getMoveButtonPosition = (
   }
   return {
     position: "absolute",
-    top: position.includes("TOP") ? -externalMoveButtonOffset : undefined,
-    left: position.includes("LEFT") ? -externalMoveButtonOffset : undefined,
-    bottom: position.includes("BOTTOM") ? -externalMoveButtonOffset : undefined,
-    right: position.includes("RIGHT") ? -externalMoveButtonOffset : undefined,
+    top: position.includes("TOP") ? -externalMoveButtonOffset : "auto",
+    left: position.includes("LEFT") ? -externalMoveButtonOffset : "auto",
+    bottom: position.includes("BOTTOM") ? -externalMoveButtonOffset : "auto",
+    right: position.includes("RIGHT") ? -externalMoveButtonOffset : "auto",
   };
 };
