@@ -1,6 +1,6 @@
 {
   "name": "react-floating-debugger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Lightweight floating container for react apps",
   "main": "build/index.js",
   "types": "build/index.d.ts",

@@ -10,7 +10,9 @@ export const DirectionalPadContainer = ({
   const { size } = useContext(InfoSettingsContext);
   const { setLabelHovered } = useContext(HoverContext);
 
-  const containerTooltip = "Click to maximize...";
+  const containerTooltip =
+    size === "MINIMIZED" ? "Click to enlarge..." : "Click to maximize...";
+
   return (
     <div
       title={containerTooltip}

@@ -108,6 +108,9 @@ Example usages (as shown in video/gif above) would be...
 </MyMainApp>
 ```
 
+## Misc
+- [related youtube videos](https://www.youtube.com/@maks-io/search?query=react%20floating%20debugger)
+
 ## Open Tasks / Ideas
 
 - add proper documentation for usage, props, etc.
