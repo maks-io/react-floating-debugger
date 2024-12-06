@@ -1,6 +1,6 @@
 {
   "name": "react-floating-debugger",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Lightweight floating container for react apps",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -32,8 +32,8 @@
   },
   "homepage": "https://github.com/maks-io/react-floating-debugger#readme",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "dependencies": {
     "sleep-lightweight": "^1.0.1"
