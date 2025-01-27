@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { JSX, ReactNode, useState } from "react";
 import { InfoSettingsProvider } from "$/contexts/InfoSettingsContext";
 import { Settings, SettingsProvider } from "$/contexts/SettingsContext";
 import { ReadymadeChildren } from "$/components/ReadymadeChildren";
@@ -39,7 +39,7 @@ export const FloatingDebugger = (
     children: FloatingDebuggerChildren;
     defaultSize?: IInfoSize;
     defaultPosition?: IInfoPosition;
-  } & Settings
+  } & Settings,
 ): JSX.Element | null => {
   const { show, defaultSize, defaultPosition } = props;
 

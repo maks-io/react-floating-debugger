@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import { Icon } from "$/components/DirectionalPad/MoveButton/Icon";
 
 export const AccordionToggleButton = ({

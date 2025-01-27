@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { JSX, ReactNode } from "react";
 import { IInfoPosition } from "../IInfoPosition";
 import { IInfoSize } from "../IInfoSize";
 import { IArrowPosition } from "./IArrowPosition";

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { JSX, useContext } from "react";
 import { AccordionToggleButton } from "$/components/AccordionItem/AccordionToggleButton";
 import { SettingsContext } from "$/contexts/SettingsContext";
 

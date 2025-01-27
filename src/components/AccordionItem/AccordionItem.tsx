@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext } from "react";
+import React, {JSX, ReactNode, useContext } from "react";
 import { AccordionItemHeader } from "$/components/AccordionItem/AccordionItemHeader";
 import { AccordionItemBody } from "$/components/AccordionItem/AccordionItemBody";
 import useLocalStorage from "$/hooks/useLocalStorage";

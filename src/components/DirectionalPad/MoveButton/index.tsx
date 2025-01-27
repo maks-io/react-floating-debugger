@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { JSX, useContext, useEffect, useState } from "react";
 import { getIconTooltip } from "$/components/DirectionalPad/MoveButton/getIconTooltip";
 import { InfoSettingsContext } from "$/contexts/InfoSettingsContext";
 import { IInfoPosition } from "../../IInfoPosition";
@@ -67,7 +67,7 @@ export const MoveButton = ({
           } else {
             const targetPosition: IInfoPosition = getTargetPosition(
               position,
-              currentPosition
+              currentPosition,
             );
             moveTo(targetPosition);
           }

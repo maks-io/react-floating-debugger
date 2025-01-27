@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { JSX, useContext } from "react";
 import { SettingsContext } from "$/contexts/SettingsContext";
 
 export const IconCornerSVG = ({ degrees, isHovered }): JSX.Element => {

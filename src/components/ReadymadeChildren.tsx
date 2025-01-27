@@ -8,12 +8,12 @@ import { AccordionItem } from "$/components/AccordionItem/AccordionItem";
 
 export const ReadymadeChildren = (
   children: FloatingDebuggerChildren,
-  currentSize: IInfoSize
+  currentSize: IInfoSize,
 ): ReactNode => {
   const renderOneChild = (
     child,
     index: number | string,
-    isSubComponent = false
+    isSubComponent = false,
   ) => {
     if (!child) {
       const key = `invalid-child-at-index-${index}-case-a`;
@@ -22,7 +22,10 @@ export const ReadymadeChildren = (
           Invalid child to render at index {index} (case a)
         </div>
       );
-    } else if (String(child?.["$$typeof"]) === "Symbol(react.element)") {
+    } else if (
+      String(child?.["$$typeof"]) === "Symbol(react.element)" ||
+      String(child?.["$$typeof"]) === "Symbol(react.transitional.element)"
+    ) {
       return child;
     } else if (typeof child === "object" && !Array.isArray(child)) {
       if (!isSubComponent && !child.title) {
@@ -61,13 +64,13 @@ export const ReadymadeChildren = (
       const childRes = child(currentSize);
       if (Array.isArray(childRes)) {
         return childRes.map((cr, childIndex) =>
-          renderOneChild(cr, `${index}.${childIndex}`, false)
+          renderOneChild(cr, `${index}.${childIndex}`, false),
         );
       }
       return childRes;
     } else if (Array.isArray(child)) {
       return child.map((cr, childIndex) =>
-        renderOneChild(cr, `${index}.${childIndex}`, false)
+        renderOneChild(cr, `${index}.${childIndex}`, false),
       );
     } else {
       const key = `invalid-child-at-index-${index}-case-b`;
