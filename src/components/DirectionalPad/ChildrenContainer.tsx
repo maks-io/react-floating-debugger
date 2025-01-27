@@ -15,6 +15,7 @@ export const ChildrenContainer = ({ children }: { children: ReactNode }) => {
         backgroundColor: usedBackgroundColor,
         borderRadius: size === "MINIMIZED" ? borderRadius : undefined,
         overflow: "scroll",
+        zIndex: 2,
       }}
     >
       {children}

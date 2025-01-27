@@ -15,6 +15,7 @@ export const DirectionalPadContainer = ({
 
   return (
     <div
+      id={"directional-pad-container"}
       title={containerTooltip}
       onMouseEnter={() => {
         setLabelHovered(true);
